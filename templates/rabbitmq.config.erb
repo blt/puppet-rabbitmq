@@ -1,0 +1,11 @@
+[
+  {rabbit, [
+     {tcp_listeners, []},
+     {ssl_listeners, [{"<%= ipaddress_eth1 %>", 5671}]},
+     {ssl_options, [{cacertfile,"/etc/rabbitmq/ssl/server/cacert.pem"},
+                    {certfile,"/etc/rabbitmq/ssl/server/cert.pem"},
+                    {keyfile,"/etc/rabbitmq/ssl/server/key.pem"},
+                    {verify,verify_peer},
+                    {fail_if_no_peer_cert,true}]}
+   ]}
+].
